@@ -29,7 +29,7 @@ function battery_charge {
     echo `/usr/bin/python /usr/local/bin/batcharge.py` 2>/dev/null
 }
 
-PROMPT='
+PROMPT='\
 %{$fg[red]%}➜  \
 %{$fg_bold[magenta]%}%n%{$reset_color%}\
 %{$fg[white]%}@\
