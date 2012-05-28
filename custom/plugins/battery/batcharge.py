@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # coding=UTF-8
 
-import math, subprocess
+import math, subprocess, sys
 
 p = subprocess.Popen(["ioreg", "-rc", "AppleSmartBattery"], stdout=subprocess.PIPE)
 output = p.communicate()[0]
+if not output: sys.exit(0)
 
 o_max = [l for l in output.splitlines() if 'MaxCapacity' in l][0]
 o_cur = [l for l in output.splitlines() if 'CurrentCapacity' in l][0]
@@ -22,7 +23,6 @@ filled = int(math.ceil(charge_threshold * (total_slots / 10.0))) * u'▸'
 empty = (total_slots - len(filled)) * u'▹'
 
 out = (filled + empty).encode('utf-8')
-import sys
 
 color_green = '%{[32m%}'
 color_yellow = '%{[1;33m%}'
