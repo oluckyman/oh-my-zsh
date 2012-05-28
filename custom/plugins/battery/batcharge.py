@@ -3,9 +3,13 @@
 
 import math, subprocess, sys
 
-p = subprocess.Popen(["ioreg", "-rc", "AppleSmartBattery"], stdout=subprocess.PIPE)
-output = p.communicate()[0]
-if not output: sys.exit(0)
+try:
+    p = subprocess.Popen(["ioreg", "-rc", "AppleSmartBattery"], stdout=subprocess.PIPE)
+    output = p.communicate()[0]
+except:
+    output = None
+finally:
+    if not output: sys.exit(0)
 
 o_max = [l for l in output.splitlines() if 'MaxCapacity' in l][0]
 o_cur = [l for l in output.splitlines() if 'CurrentCapacity' in l][0]
