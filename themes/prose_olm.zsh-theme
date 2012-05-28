@@ -26,7 +26,10 @@ function prompt_char {
 }
 
 function battery_charge {
-    echo `/usr/bin/python /usr/local/bin/batcharge.py` 2>/dev/null
+    if which battery_charge_prompt &> /dev/null; then
+        # defined in custom/plugins/battery
+        battery_charge_prompt
+    fi
 }
 
 PROMPT='\
