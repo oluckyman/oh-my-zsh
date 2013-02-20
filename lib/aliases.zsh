@@ -12,13 +12,13 @@ alias _='sudo'
 #alias g='grep -in'
 
 # Show history
-alias history='fc -l 1'
+#alias history='fc -l 1'
 
 # List direcory contents
 alias lsa='ls -lah'
 alias l='ls -lah'
 alias ll='ls -lh'
-alias sl=ls # often screw this up
+#alias sl=ls # often screw this up
 
-alias afind='ack-grep -il'
+#alias afind='ack-grep -il'
 
