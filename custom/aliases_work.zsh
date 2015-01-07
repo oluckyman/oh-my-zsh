@@ -6,7 +6,7 @@ alias rntl="cdtl; http-server -p 8000 &"
 alias cdmo="cd ~/Projects/modulint; source ~/virtualenv_home/develop/bin/activate"
 alias rnmo="cdmo; python web.py _rnmo_"
 alias rnmok="kill \$(ps | grep '[p]ython web.py _rnmo_' | awk '{print \$1}'); rnmo"
-alias rnmol="cdmo; mongod &; python web.py _rnmo_"
+alias rnmol="cdmo; mongod --config /usr/local/etc/mongod.conf &; python web.py _rnmo_"
 alias rnmolk="kill \$(ps | grep '[p]ython web.py _rnmo_' | awk '{print \$1}'); rnmol"
 
 # Auction
