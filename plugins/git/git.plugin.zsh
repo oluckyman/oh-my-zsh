@@ -21,7 +21,7 @@ alias glaa="glgg --all"
 alias gla="glg --all"
 alias gls="glaa --simplify-by-decoration"
 
-alias gss='git status -s'
+alias gs='git status -s'
 alias ga='git add'
 alias gm='git merge'
 alias grh='git reset HEAD'
